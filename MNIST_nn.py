@@ -5,11 +5,11 @@ import pandas as pd
 # import pylab
 import tensorflow as tf
 
-USE_SAVED = False
+USE_SAVED = True
 SAVE_ON_EXIT = False
 
 input_num_units = 28*28
-hidden_num_units = 377
+hidden_num_units = 500
 output_num_units = 10
 
 path_to_model = './DataSet/MNIST/model/model'
@@ -17,6 +17,13 @@ path_to_model = './DataSet/MNIST/model/model'
 # To stop potential randomness
 seed = 128
 rng = np.random.RandomState(seed)
+
+
+# set remaining variables
+epochs = 1
+batch_size = 128
+learning_rate = 0.01
+
 
 
 root_dir = os.path.abspath('./DataSet/MNIST/')
@@ -123,10 +130,6 @@ def batch_creator(batch_size, dataset_length, dataset_name):
 x = tf.placeholder(tf.float32, [None, input_num_units])
 y = tf.placeholder(tf.float32, [None, output_num_units])
 
-# set remaining variables
-epochs = 5
-batch_size = 128
-learning_rate = 0.01
 
 ### define weights and biases of the neural network (refer this article if you don't understand the terminologies)
 
@@ -198,7 +201,7 @@ with tf.Session() as sess:
     pred = predict.eval({x: test_x})
 
     from Use_NN import test_nn
-    while (True):
+    while True:
         pic = input("Index of picture in test set, 0-9999 (Enter -1 to exit): ")
         if int(pic) == -1:
             break

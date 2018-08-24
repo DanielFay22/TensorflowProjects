@@ -17,7 +17,7 @@ from scipy.misc.pilutil import imread
 # rng = np.random.RandomState(seed)
 
 
-root_dir = os.path.abspath('C:/Users/Daniel/Desktop/DataSet/')
+root_dir = os.path.abspath('./DataSet/MNIST/')
 data_dir = os.path.join(root_dir, 'data')
 
 # test = pd.read_csv(os.path.join(data_dir, 'mnist_test.csv'))

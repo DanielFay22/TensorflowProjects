@@ -6,14 +6,14 @@ import pandas as pd
 # from scipy.misc.pilutil import imread
 
 
-root_dir = os.path.abspath('C:/Users/Daniel/Desktop/DataSet/')
+root_dir = os.path.abspath('./DataSet/MNIST/')
 data_dir = os.path.join(root_dir, 'data')
-sub_dir = os.path.join(root_dir, 'sub')
+# sub_dir = os.path.join(root_dir, 'sub')
 
 # check for existence
 os.path.exists(root_dir)
 os.path.exists(data_dir)
-os.path.exists(sub_dir)
+# os.path.exists(sub_dir)
 
 train = pd.read_csv(os.path.join(data_dir, 'mnist_train.csv'))
 test = pd.read_csv(os.path.join(data_dir, 'mnist_test.csv'))
