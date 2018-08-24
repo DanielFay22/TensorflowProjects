@@ -12,14 +12,14 @@ input_num_units = 28*28
 hidden_num_units = 377
 output_num_units = 10
 
-path_to_model = 'C:/Users/Daniel/Desktop/DataSet/MNIST/model/model'
+path_to_model = './DataSet/MNIST/model/model'
 
 # To stop potential randomness
 seed = 128
 rng = np.random.RandomState(seed)
 
 
-root_dir = os.path.abspath('C:/Users/Daniel/Desktop/DataSet/MNIST/')
+root_dir = os.path.abspath('./DataSet/MNIST/')
 data_dir = os.path.join(root_dir, 'data')
 sub_dir = os.path.join(root_dir, 'sub')
 
